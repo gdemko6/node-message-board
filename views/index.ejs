@@ -1,0 +1,11 @@
+<html>
+    <body>
+        <div>
+            <% messages.forEach((message) => { %>
+             <p>Date: <%= message.added %></p>
+             <p>User: <%= message.user %></p>
+             <p>Text: <%= message.text %></p>
+            <% }); %>
+        </div>
+    </body>
+</html>

@@ -16,9 +16,9 @@ const messages = [
 ];
 
 app.get("/", (req, res) => {
-  res.send("Hello, world");
+  res.render("index.ejs", { messages: messages });
 });
 
-app.listen(3000, () => {
+app.listen(3100, () => {
   console.log("node app");
 });

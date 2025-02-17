@@ -7,6 +7,11 @@ app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
 
+const links = [
+  { href: "/", text: "Home" },
+  { href: "/new", text: "New" },
+];
+
 const messages = [
   { text: "Hello", user: "Greg", added: new Date() },
   {
@@ -18,11 +23,11 @@ const messages = [
 ];
 
 app.get("/", (req, res) => {
-  res.render("index.ejs", { messages: messages });
+  res.render("index.ejs", { messages: messages, links: links });
 });
 
 app.get("/new", (req, res) => {
-  res.render("form.ejs");
+  res.render("form.ejs", { links: links });
 });
 
 app.post("/new", (req, res) => {

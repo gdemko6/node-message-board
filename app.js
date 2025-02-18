@@ -30,6 +30,12 @@ app.get("/new", (req, res) => {
   res.render("form.ejs", { links: links });
 });
 
+app.get("/:index", (req, res) => {
+  const index = parseInt(req.params.index);
+  const message = messages[index];
+  res.render("message.ejs", { message: message, links: links });
+});
+
 app.post("/new", (req, res) => {
   message = req.body;
   messages.push({ text: message.text, user: message.user, added: new Date() });

@@ -2,10 +2,11 @@
     <body>
         <%- include('nav.ejs') %>
         <div>
-            <% messages.forEach((message) => { %>
+            <% messages.forEach((message, index) => { %>
              <p>Date: <%= message.added %></p>
-             <p>User: <%= message.user %></p>
-             <p>Text: <%= message.text %></p>
+              <a href="/<%= index %>">
+                <button>Open</button>
+              </a>
             <% }); %>
         </div>
     </body>

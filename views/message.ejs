@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <!-- Include the navigation bar -->
+    <%- include('nav.ejs') %>
+
+    <div>
+      <h2>Message Details</h2>
+      <p><strong>Date:</strong> <%= message.added.toLocaleString() %></p>
+      <p><strong>User:</strong> <%= message.user %></p>
+      <p><strong>Text:</strong> <%= message.text %></p>
+
+      <a href="/">
+        <button>Back to Messages</button>
+      </a>
+    </div>
+  </body>
+</html>

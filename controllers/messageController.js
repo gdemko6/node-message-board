@@ -11,4 +11,8 @@ async function newMessagePost(req, res) {
   res.redirect("/");
 }
 
-module.exports = { getMessages, newMessagePost };
+const newMessageGet = (req, res) => {
+  res.render("form.ejs", { links: res.locals.links });
+};
+
+module.exports = { getMessages, newMessagePost, newMessageGet };

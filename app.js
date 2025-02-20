@@ -33,9 +33,7 @@ const messages = [
 
 app.get("/", messageController.getMessages);
 
-app.get("/new", (req, res) => {
-  res.render("form.ejs", { links: links });
-});
+app.get("/new", messageController.newMessageGet);
 
 app.get("/:index", (req, res) => {
   const index = parseInt(req.params.index);

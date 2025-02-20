@@ -35,11 +35,7 @@ app.get("/", messageController.getMessages);
 
 app.get("/new", messageController.newMessageGet);
 
-app.get("/:index", (req, res) => {
-  const index = parseInt(req.params.index);
-  const message = messages[index];
-  res.render("message.ejs", { message: message, links: links });
-});
+app.get("/:index", messageController.getMessageByIndex);
 
 app.post("/new", messageController.newMessagePost);
 

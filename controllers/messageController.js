@@ -7,7 +7,7 @@ async function getMessages(req, res) {
 }
 
 async function newMessagePost(req, res) {
-  await db.newMessage(req.body.name, req.body.message);
+  await db.newMessage(req.body.user, req.body.text);
   res.redirect("/");
 }
 

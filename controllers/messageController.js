@@ -6,4 +6,9 @@ async function getMessages(req, res) {
   res.render("index.ejs", { messages });
 }
 
-module.exports = { getMessages };
+async function newMessagePost(req, res) {
+  await db.newMessage(req.body.name, req.body.message);
+  res.redirect("/");
+}
+
+module.exports = { getMessages, newMessagePost };

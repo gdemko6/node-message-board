@@ -43,10 +43,6 @@ app.get("/:index", (req, res) => {
   res.render("message.ejs", { message: message, links: links });
 });
 
-app.post("/new", (req, res) => {
-  message = req.body;
-  messages.push({ text: message.text, user: message.user, added: new Date() });
-  res.redirect("/");
-});
+app.post("/new", messageController.newMessagePost);
 
 app.listen(3000, () => {});

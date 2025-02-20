@@ -42,4 +42,4 @@ app.post("/new", (req, res) => {
   res.redirect("/");
 });
 
-app.listen(3100, () => {});
+app.listen(3000, () => {});

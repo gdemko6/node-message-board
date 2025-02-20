@@ -4,7 +4,7 @@
         <div>
             <% messages.forEach((message, index) => { %>
              <p>Date: <%= message.added %></p>
-              <a href="/<%= index %>">
+              <a href="/<%= message.id %>">
                 <button>Open</button>
               </a>
             <% }); %>
